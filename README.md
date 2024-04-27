@@ -1,35 +1,37 @@
-# vuejs-openshift
+# Steps to Deploy an Vue.js on Red Hat OpenShift
 
-This template should help get you started developing with Vue 3 in Vite.
+The [Developer Sandbox for Red Hat OpenShift](https://developers.redhat.com/developer-sandbox) is a free-to-use OpenShift instance for you to experiment with OpenShift for your use cases.The development of dynamic and responsive web applications has evolved into a fundamental requirement. Node.js and Vue.js stand out as formidable technologies capable of crafting these applications with finesse. Our workflow involves the creation and deployment of applications directly from GitHub onto an OpenShift sandbox environment.
 
-## Recommended IDE Setup
+  
 
-[VSCode](https://code.visualstudio.com/) + [Volar](https://marketplace.visualstudio.com/items?itemName=Vue.volar) (and disable Vetur).
+Follow these steps to start your sandbox instance and deploy your Vue.js app:
 
-## Customize configuration
+1.  Create a Red Hat Sandbox account using [https://developers.redhat.com/developer-sandbox](https://developers.redhat.com/developer-sandbox)
+    
+2.  Once you have the account and are signed in, On the left side menu, click on **+Add**.
+    
+3.  Select **Import from Git**.
+    
+4.  Specify your Git repo URL. For the sake of this tutorial, we use[https://github.com/redhat-developer-demos/vue.js-openshift-example](https://github.com/redhat-developer-demos/vue.js-openshift-example). But, you can choose any Vue.js repo.
+    
+5.  Add a **Containerfile** to your repo. The Containerfile helps developers to specify the environment needed for running your applications. In case, you do not have a Containerfile on your project, you can add add one to your repo by referring to [https://github.com/redhat-developer-demos/vue.js-openshift-example/blob/main/Containerfile](https://github.com/redhat-developer-demos/vue.js-openshift-example/blob/main/Containerfile)
+    
+6.  OpenShift will detect the Containerfile from the git repository. In case the Containerfile is in a subdirectory, you need to provide the path of Containerfile.
+[ NOTE: If the containerfile/Dockerfile is not detected, click Import Edit Strategy. Select as Dockerfile, define the path as Containerfile.]
 
-See [Vite Configuration Reference](https://vitejs.dev/config/).
+7.  Choose a Resource Type field, please choose either Deployment or Serverless Deployment (default option) depending on your preference.
+    
+8.  Select **Target Port** under Advanced options to define the port 8080 that will receive the container's traffic.
+    
+9.  Click on **Create**.
+    
+10.  You will now be directed to the Topology view, and the application will commence deployment. Please allow some time for the build & deployment process to complete. While it is in progress, you will have the opportunity to monitor the logs.
+    
+11.  Once it’s done deploying, you can click on the **↗** OpenURL icon to see the webpage of your Vue.js application running on OpenShift.
+    
 
-## Project Setup
+  
 
-```sh
-npm install
-```
+In this tutorial, you learned how to deploy a Vue.js application on Red Hat OpenShift. Red Hat OpenShift has powerful features that make it easy to manage and scale your Vue.js application in production.
 
-### Compile and Hot-Reload for Development
 
-```sh
-npm run dev
-```
-
-### Compile and Minify for Production
-
-```sh
-npm run build
-```
-
-### Lint with [ESLint](https://eslint.org/)
-
-```sh
-npm run lint
-```

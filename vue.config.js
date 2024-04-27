@@ -1,11 +1,13 @@
-import { defineConfig } from '@vue/cli-service'
-export default defineConfig({
+const { defineConfig } = require('@vue/cli-service')
+module.exports = defineConfig({
   transpileDependencies: true
 })
 
-export const devServer = {
-  allowedHosts: "all",
-  port: 8080,
+module.exports = {
+  devServer: {
+    allowedHosts: "all",
+    port: 8080,
+  },
 }
 
 

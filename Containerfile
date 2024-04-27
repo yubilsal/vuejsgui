@@ -19,4 +19,4 @@ VOLUME ["/app/node_modules/.cache"]
 
 EXPOSE 8080
 
-CMD ["npm", "run", "serve"]
+CMD ["npm", "run", "dev"]
